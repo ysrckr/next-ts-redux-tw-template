@@ -1,7 +1,7 @@
 import { useAuth } from '@/hooks/useAuth';
 import Link from 'next/link';
 
-const Header = async () => {
+export const Header = async () => {
   const auth = await useAuth.fromServer();
 
   return (
@@ -13,5 +13,3 @@ const Header = async () => {
     </header>
   );
 };
-
-export default Header;
