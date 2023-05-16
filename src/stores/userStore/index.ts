@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import type { UserState } from './User';
 
 const initialState: UserState = {
-  user: {},
+  user: null,
 };
 
 export const fetchUser = createAsyncThunk('user/fetchUser', async () => {
@@ -20,4 +20,4 @@ export const { actions, reducer } = createSlice({
   },
 });
 
-export const selectUser = (state: UserState) => state.user;
+export const selectUser = (state: { user: UserState }) => state.user.user;
